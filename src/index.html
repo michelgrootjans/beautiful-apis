@@ -3,19 +3,19 @@
 <head>
     <title>Beautiful API</title>
     <meta charset="UTF-8">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport"
-          content="width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta content="width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"
+          name="viewport">
 </head>
 <div class="container">
     <div class="left v-container">
         <div class="container">
-            <input id="url" type="url" placeholder="remote url">
+            <input id="url" placeholder="remote url" type="url">
             <button id="fetch">Fetch</button>
         </div>
         <button id="draw">Draw</button>
         <div id="error"></div>
-        <textarea name="input" id="input" class="input" placeholder="a valid openapi/swagger document"></textarea>
+        <textarea class="input" id="input" name="input" placeholder="a valid openapi/swagger document"></textarea>
         <h3>Previous APIs</h3>
         <ul id="previous"></ul>
     </div>
