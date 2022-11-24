@@ -1,1 +1,0 @@
-git-gamble --pass -- "npm test"
