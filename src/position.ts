@@ -3,16 +3,17 @@ import {Resource} from "./resource";
 export class Position {
   public readonly x: number;
   public readonly y: number;
+
   constructor(x: number, y: number) {
     this.x = x;
     this.y = y;
   }
 
-  right(delta: number = 1) : Position {
+  right(delta: number = 1): Position {
     return new Position(this.x + delta, this.y);
   }
 
-  left(delta: number = 1) : Position {
+  left(delta: number = 1): Position {
     return new Position(this.x - delta, this.y);
   }
 
@@ -38,6 +39,12 @@ export class PositionCalculator {
     this.calculatePosition(resource, new Position(1, 1));
   }
 
+  positionOf(resource: Resource) {
+    const pair = this.positions.find(item => item.resource === resource);
+    if (pair) return pair.position.scale(this.scale.x, this.scale.y)
+    throw `Couldn't find ${resource.name}`
+  }
+
   private calculatePosition(resource: Resource, currentPosition: Position) {
     this.positions.push({resource, position: currentPosition});
     this.calculatePositions(resource.nested, currentPosition.right())
@@ -49,11 +56,5 @@ export class PositionCalculator {
       this.calculatePosition(resource, currentPosition);
       currentPosition = currentPosition.down(resource.height())
     }
-  }
-
-  positionOf(resource: Resource) {
-    const pair = this.positions.find(item => item.resource === resource);
-    if (pair) return pair.position.scale(this.scale.x, this.scale.y)
-    throw `Couldn't find ${resource.name}`
   }
 }

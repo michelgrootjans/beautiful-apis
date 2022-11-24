@@ -1,7 +1,6 @@
 import _ from 'lodash/fp'
-import {flow} from "lodash";
 
-export class Resource{
+export class Resource {
   public readonly name: string;
   public readonly verbs: string[];
   public readonly nested: Resource[];
@@ -24,7 +23,7 @@ export class Resource{
       : 1 + _.max(this.nested.map(n => n.length()));
   }
 
-  dimensions(): {length: number, height: number} {
+  dimensions(): { length: number, height: number } {
     return {length: this.length(), height: this.height()};
   }
 }

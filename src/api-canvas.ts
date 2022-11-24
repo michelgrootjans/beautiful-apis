@@ -1,5 +1,5 @@
 import {Position, PositionCalculator} from "./position";
-import {VerbColor, verbColor} from "./verb-color";
+import {verbColor} from "./verb-color";
 import {Resource} from "./resource";
 
 const black = "rgb(0, 0, 0)";
