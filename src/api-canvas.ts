@@ -69,7 +69,6 @@ export class ApiCanvas {
   }
 
   private drawVerb(resourcePosition: Position, verbPosition: Position, text: string) {
-    const verb = verbColor(text)
     this.straightConnect(resourcePosition, verbPosition);
     this.drawBulb(text, verbPosition);
   }
