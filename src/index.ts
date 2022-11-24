@@ -2,7 +2,7 @@ import yaml from 'js-yaml';
 import {Resource, toResource} from "./resource";
 import {parseEndpointsFrom} from "./swagger-parser";
 import {ApiCanvas} from "./api-canvas";
-import './style.css';
+import '../public/style.css';
 
 const $input = document.getElementById('input') as HTMLTextAreaElement
 const $drawButton = document.getElementById('draw')
